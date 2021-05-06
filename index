@@ -1,0 +1,40 @@
+//literally the first thing I ever wrote code for in node.js, and the reason im going back to school
+//so sorry if it really rough, blame me from the past for that
+
+//npm init
+//install discord.js --save
+const Discord = require ('discord.js');
+
+// variables/roles here
+const bot = new Discord.Client();
+// this const is an example, delete after unless cum is a role kek
+const cum = '696969696969696969';
+
+
+
+//turning the bot on, all functions written in thise bracket or it wont work
+bot.on ('message',(message) =>{
+    //gets all the IDs for all the roles in your server, make const named the role and assign
+    //it to the ID
+      if (message.content == '::id'){
+        console.log(message.guild.roles);
+    
+      }
+
+      if (message.content == '!cum'){
+    
+        message.delete()
+
+        if (message.member.roles.cache.has(cum))
+         {message.member.roles.remove(cum);}
+       else 
+             { message.member.roles.add(cum); }
+     }
+
+});
+bot.login('') //token goes inside as a string
+
+
+// you can honestly make the second if statement starting on line 20 into an actual function that
+//checks for all the same stuff, im just currently on a python kick and i honestly cant remember
+//how to write functions in node.js lmao
